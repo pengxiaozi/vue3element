@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# But do not ignore the directory itself
+!emptyfolder/
