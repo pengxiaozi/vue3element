@@ -1,0 +1,18 @@
+{
+    "name": "@zfxm/layouts",
+    "version": "0.0.1",
+    "exports": {
+      ".": "./src/index.ts"
+    },
+    "typesVersions": {
+      "*": {
+        "*": ["./src/*"]
+      }
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+      "typed-css-modules": "0.9.1"
+    }
+  }
+  
