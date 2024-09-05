@@ -1,10 +1,20 @@
 // .unocss.config.ts
-import { defineConfig, presetAttributify, presetUno } from 'unocss'
+import { defineConfig } from '@unocss/vite';
+import transformerDirectives from '@unocss/transformer-directives';
+import transformerVariantGroup from '@unocss/transformer-variant-group';
+import presetUno from '@unocss/preset-uno';
 
 export default defineConfig({
   presets: [
     presetUno(),
-    presetAttributify(),
   ],
-  // 其他自定义配置...
+  shortcuts: {
+    'card-wrapper': 'rd-8px shadow-sm'
+  },
+  transformers: [transformerDirectives(), transformerVariantGroup()],
+  content: {
+    pipeline: {
+      exclude: ['node_modules', 'dist']
+    }
+  },
 })

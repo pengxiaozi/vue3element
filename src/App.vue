@@ -4,7 +4,9 @@ import { ElConfigProvider } from 'element-plus';
 
 <template>
  <ElConfigProvider>
+  <div class="h-full">
     <RouterView />
+  </div>
   </ElConfigProvider>
 </template>
 
