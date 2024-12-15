@@ -5,8 +5,6 @@ import type { CSSProperties } from 'vue';
 
 import style from './index.module.css';
 
-
-
 //传递的变量
 const props = withDefaults(defineProps<{
     showHeader: boolean;  // 是否显示头部
@@ -42,6 +40,10 @@ const props = withDefaults(defineProps<{
     siderCollapsedWidth: 64,
     footerHeight: 48,
     rightFooter: false,
+    headerHeight: 64,
+    isMobile: false,
+    maxZIndex: 100,
+    fullContent: false
 });
 
 
@@ -132,6 +134,7 @@ const siderPaddingClass = computed(() => {
                 <header class="flex-shrink-0" :class="[
                     style['layout-header'],
                     commonClass,
+                    headerLeftGapClass,
                     { 'absolute top-0 left-0 w-full': fixedHeaderAndTab }
                 ]">
                     <slot name="header"></slot>
