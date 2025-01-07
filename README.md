@@ -24,3 +24,12 @@ git push -u origin main
 目前使用的typescript 
 
 准备修改为javascript
+
+
+
+#想法如下：
+
+公共布局样式 不采用组件进行布局 
+自定义问题
+
+

@@ -1,6 +1,6 @@
-import { createRouter, RouteRecordRaw,createWebHistory  } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 
-const staticRouter: RouteRecordRaw[] = [
+const staticRouter = [
   {
     path: '/',
     name: 'Home',
@@ -10,7 +10,7 @@ const staticRouter: RouteRecordRaw[] = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(), 
+  history: createWebHistory(),
   routes: staticRouter,
   strict: false,
 });

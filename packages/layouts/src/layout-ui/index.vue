@@ -1,51 +1,30 @@
-<script setup lang="ts">
+<script setup>
 
 import { defineProps, computed } from 'vue';
-import type { CSSProperties } from 'vue';
 
 import style from './index.module.css';
 
-//传递的变量
-const props = withDefaults(defineProps<{
-    showHeader: boolean;  // 是否显示头部
-    showTab: boolean;   // 是否显示标签页
-    showSider: boolean;   // 是否显示侧边栏
-    showFooter: boolean;   // 是否显示底部
-    mode: string;   // 布局模式（vertical/horizontal）
-    scrollMode: string;   // 滚动模式（content/native）
-    commonClass: string;   // 公共样式类名
-    fixedTop: boolean;   // 头部是否固定在顶部
-    tabHeight: number;   // 标签页高度
-    siderCollapse: boolean;   // 侧边栏是否折叠
-    siderWidth: number;   // 侧边栏宽度
-    siderCollapsedWidth: number;   // 折叠后的侧边栏宽度
-    footerHeight: number;   // 底部高度
-    rightFooter: boolean;   // 是否在右侧显示底部
-    headerHeight: number;   // 头部高度
-    isMobile: boolean;   // 是否是移动端
-    maxZIndex: number;   // 最大层级
-    fullContent: boolean;   // 是否全屏显示
-}>(), {
-    showHeader: true,
-    showTab: true,
-    showSider: true,
-    showFooter: true,
-    mode: 'vertical',
-    scrollMode: 'content',
-    commonClass: 'transition-all-300',
-    fixedTop: true,
-    tabHeight: 48,
-    siderCollapse: false,
-    siderWidth: 220,
-    siderCollapsedWidth: 64,
-    footerHeight: 48,
-    rightFooter: false,
-    headerHeight: 64,
-    isMobile: false,
-    maxZIndex: 100,
-    fullContent: false
-});
 
+const props = defineProps({
+  showHeader: { type: Boolean, default: true }, // 是否显示头部
+  showTab: { type: Boolean, default: true },   // 是否显示标签页
+  showSider: { type: Boolean, default: true }, // 是否显示侧边栏
+  showFooter: { type: Boolean, default: true }, // 是否显示底部
+  mode: { type: String, default: 'vertical' },  // 布局模式（vertical/horizontal）
+  scrollMode: { type: String, default: 'content' }, // 滚动模式（content/native）
+  commonClass: { type: String, default: 'transition-all-300' }, // 公共样式类名
+  fixedTop: { type: Boolean, default: true },  // 头部是否固定在顶部
+  tabHeight: { type: Number, default: 48 },   // 标签页高度
+  siderCollapse: { type: Boolean, default: false }, // 侧边栏是否折叠
+  siderWidth: { type: Number, default: 220 }, // 侧边栏宽度
+  siderCollapsedWidth: { type: Number, default: 64 }, // 折叠后的侧边栏宽度
+  footerHeight: { type: Number, default: 48 }, // 底部高度
+  rightFooter: { type: Boolean, default: false }, // 是否在右侧显示底部
+  headerHeight: { type: Number, default: 64 }, // 头部高度
+  isMobile: { type: Boolean, default: false }, // 是否是移动端
+  maxZIndex: { type: Number, default: 100 },  // 最大层级
+  fullContent: { type: Boolean, default: false } // 是否全屏显示
+});
 
 
 const showHeader = computed(() => props.showHeader);
@@ -55,7 +34,7 @@ const showFooter = computed(() => props.showFooter);
 
 
 //style风格 变量替换
-const cssVars = computed((): CSSProperties => {
+const cssVars = computed(() => {
 
     const {
         mode,

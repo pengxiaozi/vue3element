@@ -1,14 +1,12 @@
-<script setup lang="ts">
+<script setup>
 import { computed } from 'vue';
 import { AdminLayout } from '@zfxm/layouts';
-
-
+// 定义组件名称
 defineOptions({
     name: 'BaseLayout'
 });
 
 </script>
-
 
 <template>
     <AdminLayout :show-header="true" :show-tab="true" :show-sider="true" :show-footer="true">
@@ -19,7 +17,7 @@ defineOptions({
             <span style="background-color: beige;">tab</span>
         </template>
         <template #sider>
-            <span style="background-color: blue;">sider</span>
+            
         </template>
         <template #footer>
             <span style="background-color: hotpink;">footer</span>
